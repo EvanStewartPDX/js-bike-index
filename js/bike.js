@@ -1,16 +1,21 @@
-Bike = function() {
-
+function Bike(){
+  this.abikes = 0;
 }
 
-Bike.prototype.getBike(make, color, date_before, date_after, zip) {
 
-  $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&per_page=100&proximity=45.521728%2C-122.67326&proximity_square=0&stolen_before='+ before +'&stolen_after='+ after).then(function(response) {
-    // console.log(bikes.title);
-    response.bikes.forEach
-    for (var bike in response.bikes) {
-
-    }
-  });
-}
+Bike.prototype.getBike = function(color, make, zip, before, after) {
+  var that = this;
+  $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&per_page=100&colors=' + color + '&manufacturer=' + make + '&proximity=' + zip + '&proximity_square=5&stolen_before='+ before + '&stolen_after=' + after).then(function(response) {
+      // for (var bike of response.bikes) {
+      //   var title = bike.title;
+      //   bikes.push(bike);
+      // }
+      // console.log(that);
+      that.abikes = response.bikes.length;
+      // console.log(that);
+    });
+    // console.log("abikes after request: " + this.abikes);
+    // return this.abikes;
+};
 
 exports.bikeModule = Bike;
