@@ -1,8 +1,43 @@
-.body {
-  $gray: gray;
+.zipclick {
+  color: blue;
 }
 
 .zipclick:hover {
-
   text-decoration: underline;
+  cursor: pointer;
 }
+
+col-sm-2 {
+  border: solid;
+}
+
+.max-num {
+  font-style: italic;
+  color: maroon;
+}
+#container {
+  margin: 0 auto;
+  width: 1000px;
+
+
+}
+
+#search {
+  display: block;
+  text-align: center;
+}
+
+.jumbotron {
+
+}
+
+body {
+  background: url('/img/bikes.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+// #map {
+// 	margin-left: 7%;
+// 	margin-right: 10%;
+// 	display: none;
+// }

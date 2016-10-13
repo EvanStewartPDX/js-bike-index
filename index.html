@@ -6,52 +6,70 @@
     <link rel="stylesheet" href="build/css/app.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
-    <title></title>
+    <title>Stolen Bike Search</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Search!</h1>
-        <form id ="search">
-          <label for="make">Enter a make:</label>
-          <input id="make" type="text"><br>
-          <label for="color">Enter a color:</label>
-          <input id="color" type="text"><br>
-          <label for="color">Enter a Zip Code</label>
-          <input id="zip" type="text"><br>
-
-          <label for="after">Stolen After Date:</label>
-          <input id="after" type="date" value="2016-01-01" required>
-          <label for="before">Stolen Before Date:</label>
-          <input id="before" type="date" value="2016-10-13" required><br>
-          <button class="btn-success" type="submit" id="getBikes">Get Bikes!</button>
-          <div class="showBikes"></div>
+    <div class ="jumbotron">
+        <h1 class="text-center">Search your area for the number of stolen bikes!</h1>
+    </div>
+    <div id ="container" class= "well">
+        <form id ="search" class="panel">
+          <div class="panel-body">
+          <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group panel">
+                  <label for="make">Enter a make:</label>
+                  <input id="make" type="text"><br>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="color">Enter a color:</label>
+                  <input id="color" type="text"><br>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="color">Location:</label>
+                  <input id="zip" type="text"><br>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="after">Stolen After Date:</label>
+              <input id="after" type="date" value="2016-01-01" required>
+              <label for="before">Stolen Before Date:</label>
+              <input id="before" type="date" value="2016-10-13" required><br>
+            </div>
+            <button class="btn-success" type="submit" id="getBikes">Get Bikes!</button>
+            <button class="btn-danger" id="clear">Clear Filters</button>
+            <div class="showBikes"></div>
+          </div>
         </form>
-        <h4> Maximum results is 100</h4>
+        <h4 class="max-num text-center"> Maximum results is 100</h4>
+      <div class="row text-center">
+        <div class ="col-sm-2" id="zipheader">
+            <h4>Zip Code:</h4>
+            <h6>(Click to see area)</h6>
+        </div>
+        <div class ="col-sm-2" id="showheader">
+            <h4>Stolen Bikes</h4>
+        </div>
+        <div class="col-sm-4">
+          <h4 class="text-center"> Total number of bikes stolen: <span class="showbikes"></span></h4>
+        </div>
+      </div>
+      <div class ="row text-center">
+        <div class ="col-sm-2" id="showzips">
+            <ul></ul>
+        </div>
+        <div class ="col-sm-2" id="showcount">
+            <ul></ul>
+        </div>
+        <div class ="col-md-4" id ="map">
+        </div>
+      </div>
+
     </div>
-
-
-  <div class ="container">
-    <h4> Total number of bikes stolen: <span class="showbikes"></span></h4>
-    <div class="row text-center">
-      <div class ="col-sm-2" id="zipheader">
-          <h4>Zip Code:</h4>
-      </div>
-      <div class ="col-sm-2" id="showheader">
-          <h4>Stolen Bikes</h4>
-      </div>
-    </div>
-    <div class ="row text-center">
-      <div class ="col-sm-2" id="showzips">
-          <ul><a href =""</ul>
-      </div>
-      <div class ="col-sm-2" id="showcount">
-          <ul></ul>
-      </div>
-    </div>
-  </div>
-
-
-
-
   </body>
 </html>
