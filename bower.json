@@ -3,7 +3,7 @@
   "description": "An API driven bike index",
   "main": "gulpfile.js",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/stewarea/js-bike-index",
   "ignore": [
     "**/.*",
     "node_modules",

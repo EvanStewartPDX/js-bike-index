@@ -9,16 +9,26 @@
     <title></title>
   </head>
   <body>
-    <form id="search">
-      <label for="make">Make</label>
-      <label for="color">Color</label>
-      <label for="zip">Zip Code</label>
-      <label id="before" type="date">Stolen Before</label>
-      <label id="after" type="date">Stolen AFter</label>
-      <button type="submit">submit</button>
-    </form>
-  <p class="showbikes">
+    <div class="container">
+      <h1>Search!</h1>
+        <form id ="search">
+          <label for="make">Enter a make:</label>
+          <input id="make" type="text">
+          <label for="color">Enter a color:</label>
+          <input id="color" type="text">
+          <label for="color">Enter a Zip Code</label>
+          <input id="zip" type="text">
+          <label for="color">Stolen Before Date:</label>
+          <input id="before" type="date">
+          <label for="after">Stolen After Date:</label>
+          <input id="after" type="date">
+          <button class="btn-success" type="submit" id="getBikes">Get Bikes!</button>
+          <div class="showBikes"></div>
+        </form>
+    </div>
+  <p class="showbikes"></p>
+  <ul class="showzips"></ul>
 
-  </p>
+
   </body>
 </html>
