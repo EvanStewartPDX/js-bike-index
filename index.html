@@ -13,21 +13,44 @@
       <h1>Search!</h1>
         <form id ="search">
           <label for="make">Enter a make:</label>
-          <input id="make" type="text">
+          <input id="make" type="text"><br>
           <label for="color">Enter a color:</label>
-          <input id="color" type="text">
+          <input id="color" type="text"><br>
           <label for="color">Enter a Zip Code</label>
-          <input id="zip" type="text">
-          <label for="color">Stolen Before Date:</label>
-          <input id="before" type="date">
+          <input id="zip" type="text"><br>
+
           <label for="after">Stolen After Date:</label>
-          <input id="after" type="date">
+          <input id="after" type="date" value="01/01/2016" required>
+          <label for="before">Stolen Before Date:</label>
+          <input id="before" type="date" value="10/13/2016" required><br>
           <button class="btn-success" type="submit" id="getBikes">Get Bikes!</button>
           <div class="showBikes"></div>
         </form>
+        <h4> Maximum results is 100</h4>
     </div>
-  <p class="showbikes"></p>
-  <ul class="showzips"></ul>
+
+
+  <div class ="container">
+    <h4> Total number of bikes stolen: <span class="showbikes"></span></h4>
+    <div class="row text-center">
+      <div class ="col-sm-2" id="zipheader">
+          <h4>Zip Code:</h4>
+      </div>
+      <div class ="col-sm-2" id="showheader">
+          <h4>Stolen Bikes</h4>
+      </div>
+    </div>
+    <div class ="row text-center">
+      <div class ="col-sm-2" id="showzips">
+          <ul></ul>
+      </div>
+      <div class ="col-sm-2" id="showcount">
+          <ul></ul>
+      </div>
+    </div>
+  </div>
+
+
 
 
   </body>

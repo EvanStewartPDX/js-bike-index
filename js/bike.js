@@ -1,4 +1,4 @@
-function Bike(color, make, zip, before, after){
+function Search(color, make, zip, before, after){
   this.color = color;
   this.make = make;
   this.zip = zip;
@@ -8,7 +8,7 @@ function Bike(color, make, zip, before, after){
 }
 
 
-Bike.prototype.getBike = function(displayBikes, displayZips) {
+Search.prototype.getBike = function(displayBikes, displayZips) {
   var that = this;
   $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&per_page=100&colors=' + that.color + '&manufacturer=' + that.make + '&proximity=' + that.zip + '&proximity_square=5&stolen_before='+ that.before + '&stolen_after=' + that.after).then(function(response) {
       // for (var bike of response.bikes) {
@@ -23,7 +23,7 @@ Bike.prototype.getBike = function(displayBikes, displayZips) {
     // return this.abikes;
 };
 
-Bike.prototype.getZips = function(bikes, displayZips) {
+Search.prototype.getZips = function(bikes, displayZips) {
   var ziparray = [];
   var result = { };
 
@@ -48,7 +48,7 @@ Bike.prototype.getZips = function(bikes, displayZips) {
   // displayZips(ziparray);
 };
 
-Bike.prototype.countZips = function(ziparray, displayZips)  {
+Search.prototype.countZips = function(ziparray, displayZips)  {
   var zip = 0;
   var count = 0;
   zipCount = [];
@@ -67,4 +67,4 @@ Bike.prototype.countZips = function(ziparray, displayZips)  {
 };
 
 
-exports.bikeModule = Bike;
+exports.searchModule = Search;

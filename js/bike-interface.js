@@ -1,33 +1,33 @@
-var Bike = require('./../js/bike.js').bikeModule;
+var Search = require('./../js/bike.js').searchModule;
 
 var displayBikes = function(bikes) {
   $(".showbikes").text(bikes);
 };
 var displayZips = function(zip, count) {
-  $(".showzips").append("<li>Number of bikes stolen in " + zip + " is " + count + " times.</li>");
+  $("#showzips").append("<p>" + zip + "</p>");
+  $("#showcount").append("<p> " + count + " </p>");
 };
 
 $(document).ready(function() {
   $('#search').submit(function(event) {
     event.preventDefault();
-    // console.log('sup')
 
-    // var make = $('#make').val();
-    // var zip = $('#zip').val();
-    // var color = $('#color').val();
-    // var date_before = new Date($("#before").val());
-    // var date_after = new Date($("#after").val());
-    var date_before = new Date('10/12/2016');
-    var date_after = new Date('08/01/2016');
+    var make = $('#make').val();
+    var zip = $('#zip').val();
+    var color = $('#color').val();
+    var date_before = new Date($("#before").val());
+    var date_after = new Date($("#after").val());
+    // var date_before = new Date('10/12/2016');
+    // var date_after = new Date('08/01/2016');
 
-    var color = '';
-    var make = '';
-    var zip = "97210";
+    // var color = '';
+    // var make = '';
+    // var zip = "97210";
     var before = date_before.getTime()/1000.0;
     var after = date_after.getTime()/1000.0;
-    var newbike = new Bike(color, make, zip, before, after);
+    var newSearch = new Search(color, make, zip, before, after);
 
-    var bikes = newbike.getBike(displayBikes, displayZips);
+    newSearch.getBike(displayBikes, displayZips);
       // console.log(bikes);
       // setTimeout(bikeText, 5000);
       //
