@@ -4,7 +4,7 @@ var displayBikes = function(bikes) {
   $(".showbikes").text(bikes);
 };
 var displayZips = function(zip, count) {
-  $("#showzips").append("<p>" + zip + "</p>");
+  $("#showzips").append("<p class='zipclick'>" + zip + "</p>");
   $("#showcount").append("<p> " + count + " </p>");
 };
 
@@ -28,7 +28,16 @@ $(document).ready(function() {
     var newSearch = new Search(color, make, zip, before, after);
 
     newSearch.getBike(displayBikes, displayZips);
-      // console.log(bikes);
+
+    $('#showzips, .zipclick').click(function (event) {
+		event.preventDefault();
+    alert("hi");
+		format(qArray);
+		// $('.hid').slideUp();
+		$('#map').delay(500).append('<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=' +
+		search.zip +
+		'&key=AIzaSyC-u-zGtcSYGbK84Yxq9a_cY76NyKvHoVs&zoom=12" allowfullscreen></iframe>').fadeIn(500);
+	})  // console.log(bikes);
       // setTimeout(bikeText, 5000);
       //
       // function bikeText(){
