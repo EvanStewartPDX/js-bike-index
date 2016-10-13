@@ -3,8 +3,8 @@ var Bike = require('./../js/bike.js').bikeModule;
 var displayBikes = function(bikes) {
   $(".showbikes").text(bikes);
 };
-var displayZips = function(stolenzips) {
-  $(".showzips").append("<li>" + stolenzips + "</li>");
+var displayZips = function(zip, count) {
+  $(".showzips").append("<li>Number of bikes stolen in " + zip + " is " + count + " times.</li>");
 };
 
 $(document).ready(function() {

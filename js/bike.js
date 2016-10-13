@@ -25,17 +25,46 @@ Bike.prototype.getBike = function(displayBikes, displayZips) {
 
 Bike.prototype.getZips = function(bikes, displayZips) {
   var ziparray = [];
+  var result = { };
+
   for (var bike of bikes) {
     var location = bike.stolen_location;
     var part = location.split(",");
     var stolenzip = part[2];
-    if(ziparray.indexOf(stolenzip) === -1 && !isNaN(stolenzip)) {
+    // if(ziparray.indexOf(stolenzip) === -1 && !isNaN(stolenzip)) {
       ziparray.push(stolenzip);
-      console.log(ziparray);
+    // }
+  }
+  // for( var i = 0; i < ziparray.length; ++i) {
+  //   if(!result[ziparray[i]])
+  //     result[ziparray[i]] = 0;
+  //     ++result[ziparray[i]];
+  //
+  // }
+  // var resultsplit = result.split(",");
+  // var resultpart = resultsplit[0];
+  // console.log(result);
+  this.countZips(ziparray, displayZips);
+  // displayZips(ziparray);
+};
+
+Bike.prototype.countZips = function(ziparray, displayZips)  {
+  var zip = 0;
+  var count = 0;
+  zipCount = [];
+  var zips = ziparray.sort();
+  for (var i = 0; i < zips.length; i++) {
+    if (zips[i] != zip) {
+      if (count > 0) {
+        displayZips(zip, count);
+      }
+      zip = zips[i];
+      count=1;
+    } else {
+      count++;
     }
   }
-
-  displayZips(ziparray);
 };
+
 
 exports.bikeModule = Bike;
